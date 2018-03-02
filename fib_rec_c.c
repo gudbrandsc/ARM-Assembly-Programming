@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-int fib_rec_c(int n)
-{
+// Function that returns the n'th fibonacci sequence number
+int fib_rec_c(int n){
   if (n == 0) {
     return 0;
   } else if (n == 1) {

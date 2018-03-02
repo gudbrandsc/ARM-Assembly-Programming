@@ -1,24 +1,29 @@
 	.global fib_iter_s
 	.func fib_iter_s
 fib_iter_s:
-	MOV R1, #0 // int f1
-	MOV R2, #1 // int f2
-	MOV R3, #1 // int i
-	MOV R4, #0 // int res
-	CMP R0, #1 // if(n>1)
-	BLS RETURN_ONE //if not
-LOOP:
-	CMP R3,R0 //if i == n
-	BGE DONE // if true end
-	ADD R4, R2, R1  // sum = f1 + f2
-	ADD R3, R3, #1 // i=i+1
-	MOV R1, R2 // f1 = f2
-	MOV R2, R4
-	B LOOP
-DONE:
-	MOV R0,R4
-	bx lr
+	cmp r0, #1 // if(n > 1)
+	bls set_one //if not
+	push {r4}
+	mov r1, #0 // int f1
+	mov r2, #1 // int f2
+	mov r3, #1 // int i
+	mov r4, #0 // int res
+	b loop
+loop:
+	cmp r3,r0 //if i == n
+	bge done // if true end
+	add r4, r2, r1  // sum = f1 + f2
+	add r3, r3, #1 // i = i + 1
+	mov r1, r2 // f1 = f2
+	mov r2, r4 // f2 = res
+	b loop // loop back
+done:
+	mov r0,r4 // mov fib value to return register
+	pop {r4}
+	b end // return
 	
-RETURN_ONE:
-	MOV R0,#1
+set_one:
+	mov r0, #1 // set return value as 1 
+	b end // return
+end:
 	bx lr

@@ -1,7 +1,6 @@
 #include<stdio.h>
 
-int sum_array_c(int *array, int n)
-{
+int sum_array_c(int* array, int n){
   int i;
   int sum = 0;
 
