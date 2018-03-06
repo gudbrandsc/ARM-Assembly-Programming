@@ -24,10 +24,10 @@ void print_values(int* array, int size){
   int i;
   for(i = 0; i < size; i++){
     if(i + 1 == size){ // If last value print value without comma
-	printf("%d", array[i]);
-      }else{
-	printf("%d,", array[i]);
-      }
+      printf("%d", array[i]);
+    }else{
+      printf("%d,", array[i]);
+    }
   }
 }
 
@@ -35,7 +35,7 @@ void print_values(int* array, int size){
 void sum_array_test(int* array, int size){
   int sum_c =  sum_array_c(array, size);
   int sum_s =  sum_array_s(array, size);
-
+  
   
   if(size > 10){ // if array size is greater than 10 print only start and end values
     printf("sum_array_c({%d,%d,%d,...,%d}, %d) = %d\n", array[0], array[1], array[2], array[size-1], size,sum_c);
@@ -109,7 +109,7 @@ void run_fib_iter_test(int n){
     if(i == n){
       printf("%d\n", fib_iter_s(i));   
     }else{
-    printf("%d, ", fib_iter_s(i));   
+      printf("%d, ", fib_iter_s(i));   
     }
   }
 }
@@ -117,7 +117,7 @@ void run_fib_iter_test(int n){
 // Function to print all n fibonacci sequence numbers from recursive functions
 void run_fib_rec_test(int n){
   int i;
-
+  
   printf("\n====== Testing recursively fibonacci sequence to: %d ======\n", n);
   printf("fib_rec_c: ");
   for(i = 1; i <= n; i++){ // Print n fib numbers from recursive c function
@@ -127,13 +127,13 @@ void run_fib_rec_test(int n){
       printf("%d, ", fib_rec_c(i));   
     }
   }
-
+  
   printf("fib_rec_s: ");
   for(i = 1; i <= n; i++){ // Print n fib numbers from recursive ARM function
     if(i == n){
       printf("%d\n", fib_rec_s(i));   
     }else{
-    printf("%d, ", fib_rec_s(i));   
+      printf("%d, ", fib_rec_s(i));   
     }
   }
 }
@@ -143,10 +143,11 @@ void find_sub_string_test(char* string, char *substring){
   printf("find_str_c(%s, %s): %d \n", string, substring, find_str_c(string, substring));
   printf("find_str_s(%s, %s): %d \n", string, substring, find_str_s(string, substring));
 }
+
 // Function to run all test's to find a substring
 void run_find_substring_tests(char* string1, char* substring1, char* string2, char* substring2, char* substring3){
   printf("\n====== Testing find substring  ======\n");
-
+  
   find_sub_string_test(string1, substring1); // Test where sub is present
   find_sub_string_test(string1, substring2); // Test where sub is not present 
   find_sub_string_test(string2, substring3); // Test empty string

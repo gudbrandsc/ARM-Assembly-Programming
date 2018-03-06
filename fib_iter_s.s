@@ -3,7 +3,7 @@
 fib_iter_s:
 	cmp r0, #1 // if(n > 1)
 	bls set_one //if not
-	push {r4}
+	push {r4, r5}
 	mov r1, #0 // int f1
 	mov r2, #1 // int f2
 	mov r3, #1 // int i
@@ -19,7 +19,7 @@ loop:
 	b loop // loop back
 done:
 	mov r0, r4 // mov fib value to return register
-	pop {r4}
+	pop {r4, r5}
 	b end // return
 	
 set_one:
