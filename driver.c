@@ -15,7 +15,7 @@ int find_str_s(char* string, char* substring);
 void populate_large_array(int* array, int size){
   int i;
   for(i = 1; i < size + 1; i++){
-    array[i-1] = i;
+    array[i - 1] = i;
   }
 }
 
@@ -70,7 +70,6 @@ void find_max_test(int* array, int size){
   }
 }
 
-
 //Function that call's test for summing array, for each array  
 void run_sum_array_tests(int* array1, int* array2, int* array3, int* array4){
   printf("====== Testing summing array ======\n");
@@ -93,8 +92,7 @@ void run_find_max_tests(int* array1, int* array2, int* array3, int* array4){
 void run_fib_iter_test(int n){
   int i;
   
-  printf("\n====== Testing iterativ fibonacci sequence to: %d ======\n", n);
-  
+  printf("\n====== Testing iterativ fibonacci sequence to: %d ======\n", n); 
   printf("fib_iter_c: ");
   for(i = 1; i <= n; i++){ // Print n fib numbers from iterativ c function
     if(i == n){

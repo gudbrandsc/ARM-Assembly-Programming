@@ -4,7 +4,6 @@
 fib_rec_s:
 	sub sp, sp, #16
 	str lr, [sp]
-
 	cmp r0, #0 // if n == 0
 	moveq r0, #0 // return 0
 	beq end // end fuction 

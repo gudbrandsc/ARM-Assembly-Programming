@@ -4,8 +4,7 @@
 find_max_s:
 	push {r4, r5}
 	mov r2, #1 // int i
-	ldr r3,[r0, #0]  // sum = array[0]
-	
+	ldr r3,[r0, #0]  // max = array[0]	
 loop:
 	cmp r2, r1 //if i<= array.length
 	bge done // Exit
@@ -15,7 +14,6 @@ loop:
 	cmp r5, r3 // if(array[i] >= res)
 	bge set_largest // if(array[i) >= res -> if true
 	b loop //Repeat loop
-	
 set_largest:
 	mov r3, r5 // sum = array[i]
 	b loop // go back to loop

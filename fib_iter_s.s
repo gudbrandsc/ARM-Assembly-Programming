@@ -21,7 +21,6 @@ done:
 	mov r0, r4 // mov fib value to return register
 	pop {r4, r5}
 	b end // return
-	
 set_one:
 	mov r0, #1 // set return value as 1 
 	b end // return
