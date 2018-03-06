@@ -10,7 +10,7 @@ fib_iter_s:
 	mov r4, #0 // int res
 	b loop
 loop:
-	cmp r3,r0 //if i == n
+	cmp r3, r0 //if i == n
 	bge done // if true end
 	add r4, r2, r1  // sum = f1 + f2
 	add r3, r3, #1 // i = i + 1
@@ -18,7 +18,7 @@ loop:
 	mov r2, r4 // f2 = res
 	b loop // loop back
 done:
-	mov r0,r4 // mov fib value to return register
+	mov r0, r4 // mov fib value to return register
 	pop {r4}
 	b end // return
 	
